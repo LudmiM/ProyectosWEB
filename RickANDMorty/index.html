@@ -9,13 +9,14 @@
     </head>
     <body>
         <header>
-            <div class="logo">
-                <h1>RICK AND MORTY</h1>
-            </div>
-
-            <div class="menu">
-                <i class="icono__hamburguesa" style="color: #ffffff;"></i>
-
+            <div class="menu container">
+                <a href="#" class="logo">Rick y Morty</a>
+                <input type="checkbox" id="menu">
+        
+                <label for="menu">
+                    <i class="fa-solid fa-bars menu-icono" style="color: #ffffff;"></i>
+                </label>
+        
                 <nav class="nav__generos">
                     <ul>
                         <li><a>Todo</a></li>
@@ -34,9 +35,12 @@
         </main>
 
         <div class="botones__paginado">
-            <button>Anterior</button>
-            <button></button>
-            <button>siguiente</button>
+            <button id="irPrimera">«</button>
+            <button class="anterior">Anterior</button>
+            <label for="especifico"></label>
+            <input type="number" id="especifico">
+            <button class="siguiente">siguiente</button>
+            <button id="irUltima">»</button>
         </div>
         
         <footer>
