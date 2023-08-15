@@ -19,11 +19,11 @@
         
                 <nav class="nav__generos">
                     <ul>
-                        <li><a>Todo</a></li>
-                        <li><a>Mujer</a></li>
-                        <li><a>Hombre</a></li>
-                        <li><a>unknown</a></li>
-                        <li><a>genderless</a></li>
+                        <li><a href="#" id="all">Todo</a></li>
+                        <li><a href="#" id="Female">Mujer</a></li>
+                        <li><a href="#" id="Male">Hombre</a></li>
+                        <li><a href="#" id="unknown">Unknown</a></li>
+                        <li><a href="#" id="Genderless">Genderless</a></li>
                     </ul>
                 </nav>
             </div>
@@ -37,8 +37,10 @@
         <div class="botones__paginado">
             <button id="irPrimera">«</button>
             <button class="anterior">Anterior</button>
+
             <label for="especifico"></label>
-            <input type="number" id="especifico">
+            <input type="number" id="especifico" min="1" max="42" oninput="validarInput(this)">
+           
             <button class="siguiente">siguiente</button>
             <button id="irUltima">»</button>
         </div>

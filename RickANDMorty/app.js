@@ -39,18 +39,21 @@ function cargarPagina(pagina) {
             console.error("Error:", error);
         });
 }
+//Filtar por genero
 
+
+//Fin filtrar por genero
 function botonAnteriorClick() {
     if (paginaActual > 1) {
         paginaActual--;
+        actualizarEstadoBotones(paginaActual);
         cargarPagina(paginaActual);
-    }else{
-        $botonAnterior.disabled = true;
     }
 }
 
 function botonSiguienteClick() {
     paginaActual++;
+    actualizarEstadoBotones(paginaActual);
     cargarPagina(paginaActual);
 }
 
@@ -58,22 +61,49 @@ function botonEspecificoClick() {
     const nuevaPagina = parseInt($inputEspecifico.value);
     if (!isNaN(nuevaPagina) && nuevaPagina >= 1) {
         paginaActual = nuevaPagina;
+        actualizarEstadoBotones(paginaActual);
         cargarPagina(paginaActual);
     }
 }
 
 function botonIrPrimeraClick() {
     paginaActual = 1;
+    actualizarEstadoBotones(paginaActual);
     cargarPagina(paginaActual);
-    
 }
 
 function botonIrUltimaClick() {
     const ultimaPagina = 42; // Total de páginas
     paginaActual = ultimaPagina;
+    actualizarEstadoBotones(paginaActual);
     cargarPagina(paginaActual);
-    
 }
+
+function actualizarEstadoBotones(paginaActual) {
+    if(paginaActual <= 1){
+        $botonAnterior.disabled = true;
+        $botonIrPrimera.disabled = true;
+    } else {
+        $botonAnterior.disabled = false;
+        $botonIrPrimera.disabled = false;
+    }
+    if(paginaActual === 42 ){
+        $botonSiguiente.disabled = true
+        $botonIrUltima.disabled = true
+    } else {
+        $botonSiguiente.disabled = false
+        $botonIrUltima.disabled = false
+    }
+}
+
+function validarInput(input) {
+    const valor = parseInt(input.value);
+    if (isNaN(valor)) { 
+        input.value = "";
+    } else {
+        input.value = Math.min(Math.max(valor, 1), 42);
+    }
+}//nose que hace, pero funciona
 
 $botonAnterior.addEventListener("click", botonAnteriorClick);
 $botonSiguiente.addEventListener("click", botonSiguienteClick);
@@ -81,5 +111,7 @@ $inputEspecifico.addEventListener("change", botonEspecificoClick);
 $botonIrPrimera.addEventListener("click", botonIrPrimeraClick);
 $botonIrUltima.addEventListener("click", botonIrUltimaClick);
 
+actualizarEstadoBotones(paginaActual);
 // Cargar la primera página al cargar la página
 cargarPagina(paginaActual);
+
