@@ -41,19 +41,19 @@ function cargarPagina(pagina) {
         });
 }
 //Filtar por genero
-
 function mostrarTarjetasPersonalizadas(genero) {
     if (genero === ""){
         mostrar(personajes);
     }else {
         const personajesFiltrados = personajes.filter(personaje => personaje.gender === genero);
         mostrar(personajesFiltrados);
+        if (personajesFiltrados.length === 0) {
+            console.log("No hay personajes que cumplan con el filtro.");
+        }    
     }
 }
 
-//Fin filtrar por genero
-
-//Funciones de Botones
+//Funciones de Botones {ant, sig, ir ultima, ir primera} pagina
 function botonAnteriorClick() {
     paginaActual--;
     actualizarEstadoBotones(paginaActual);
@@ -86,7 +86,7 @@ function botonIrUltimaClick() {
     actualizarEstadoBotones(paginaActual);
     cargarPagina(paginaActual);
 }
-
+//Habilitar y deshabilitar botones segun corresponda
 function actualizarEstadoBotones(paginaActual) {
     if(paginaActual <= 1){
         $botonAnterior.disabled = true;
@@ -103,7 +103,7 @@ function actualizarEstadoBotones(paginaActual) {
         $botonIrUltima.disabled = false
     }
 }
-
+//validar pagina especifica 1--42
 function validarInput(input) {
     const valor = parseInt(input.value);
     if (isNaN(valor)) { 
@@ -119,7 +119,7 @@ $inputEspecifico.addEventListener("change", botonEspecificoClick);
 $botonIrPrimera.addEventListener("click", botonIrPrimeraClick);
 $botonIrUltima.addEventListener("click", botonIrUltimaClick);
 
+//actualiza el estado de los botones para la primer pagina
 actualizarEstadoBotones(paginaActual);
 // Cargar la primera página al cargar la página
 cargarPagina(paginaActual);
-
