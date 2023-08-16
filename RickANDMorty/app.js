@@ -6,6 +6,7 @@ const $botonIrPrimera = document.querySelector("#irPrimera");
 const $botonIrUltima = document.querySelector("#irUltima");
 
 let paginaActual = 1;
+let personajes = [];
 
 function mostrar(array) {
     $contenedorTarjetas.innerHTML = ""; // Limpiar el contenido actual
@@ -32,7 +33,7 @@ function cargarPagina(pagina) {
     fetch(`https://rickandmortyapi.com/api/character/?page=${pagina}`)
         .then(response => response.json())
         .then(data => {
-            const personajes = data.results;
+            personajes = data.results;
             mostrar(personajes);
         })
         .catch(error => {
@@ -41,16 +42,23 @@ function cargarPagina(pagina) {
 }
 //Filtar por genero
 
-
-//Fin filtrar por genero
-function botonAnteriorClick() {
-    if (paginaActual > 1) {
-        paginaActual--;
-        actualizarEstadoBotones(paginaActual);
-        cargarPagina(paginaActual);
+function mostrarTarjetasPersonalizadas(genero) {
+    if (genero === ""){
+        mostrar(personajes);
+    }else {
+        const personajesFiltrados = personajes.filter(personaje => personaje.gender === genero);
+        mostrar(personajesFiltrados);
     }
 }
 
+//Fin filtrar por genero
+
+//Funciones de Botones
+function botonAnteriorClick() {
+    paginaActual--;
+    actualizarEstadoBotones(paginaActual);
+    cargarPagina(paginaActual);
+}
 function botonSiguienteClick() {
     paginaActual++;
     actualizarEstadoBotones(paginaActual);
