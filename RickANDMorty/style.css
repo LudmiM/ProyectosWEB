@@ -8,7 +8,7 @@
 body {
     font-family: Arial, sans-serif;
 }
-/*Comienzo*/
+/*Comienzo navegador con menu hamburguesa*/
 header{
     padding: 32px 0;
     background-color: black;
@@ -21,13 +21,14 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 1000;
+    
 }
 .logo{
     font-size: 24px;
-    color: blue;
+    color: aliceblue;
     font-weight: 800;
     text-transform: uppercase;
+    padding: 0.5rem;
 }
 
 .menu .nav__generos ul li{
@@ -73,6 +74,9 @@ header{
         background-color: blueviolet;
         display: none;
     }
+    .container{
+        height: 2rem;
+    }
     .menu .nav__generos ul li{
         width: 100%;
     }
@@ -80,13 +84,14 @@ header{
         display: initial;
     }
 }
-/*Fin*/
+/*Fin navegador con menu hamburguesa*/
 
 .contenedor__tarjetas {
     display: grid;
-    gap: 2rem;
+    gap: 1.25rem;
     grid-auto-rows: minmax(100px, auto);
     grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+    padding: 1rem;
 }
 
 .tarjeta {
@@ -97,7 +102,28 @@ header{
     width: 100%;
     max-width: 20rem;
 }
-
 img {
     border-radius: 1rem;
 }
+/*Inicio estilos de botones*/
+.botones__paginado {
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.todos__btn {
+    cursor: pointer;
+    border: none;
+    height: 4rem;
+    width: 15rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+@media (max-width: 768px) {
+    .botones__paginado {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/*Fin estudio botones*/

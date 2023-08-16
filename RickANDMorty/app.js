@@ -24,7 +24,11 @@ function mostrar(array) {
                 <p>Origen: ${item.origin.name}</p>
                 <p>Localización: ${item.location.name}</p>
             </div>
+            <div class="modal"> 
+                <a href="#">Ver más..</a>
+            </div>
         `;
+        //line 27 ${item.id}  "url": "https://rickandmortyapi.com/api/character/361",
         $contenedorTarjetas.appendChild(tarjetaDiv);
     });
 }
@@ -109,9 +113,9 @@ function validarInput(input) {
     if (isNaN(valor)) { 
         input.value = "";
     } else {
-        input.value = Math.min(Math.max(valor, 1), 42);
+        input.value = Math.min(Math.max(valor, 1), 42); //nose que hace, pero funciona
     }
-}//nose que hace, pero funciona
+}
 
 $botonAnterior.addEventListener("click", botonAnteriorClick);
 $botonSiguiente.addEventListener("click", botonSiguienteClick);
