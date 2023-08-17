@@ -56,6 +56,9 @@ header{
     cursor: pointer;
     display: none;
 }
+.noHay{
+    display: none;
+}
 
 @media(max-width:991px){
     .menu{
@@ -128,12 +131,13 @@ p{
     }
 }
 /*Fin estudio botones*/
-
+/*Inicion Pie de pagina*/
 footer{
-    background-color: #00B2B2;
+    background-color: #00B2B2; 
 }
-.btn__especial{
-    background-color: #FFA500;
-    cursor: pointer;
-    border: none;
+footer p{
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

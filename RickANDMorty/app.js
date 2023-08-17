@@ -52,7 +52,7 @@ function mostrarTarjetasPersonalizadas(genero) {
         const personajesFiltrados = personajes.filter(personaje => personaje.gender === genero);
         mostrar(personajesFiltrados);
         if (personajesFiltrados.length === 0) {
-            console.log("No hay personajes que cumplan con el filtro.");
+            console.log('No hay tarjetas que coincidan con el genero '+genero)
         }    
     }
 }
