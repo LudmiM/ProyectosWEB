@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none; 
+}
+body {
+    background-image: url('./fondo.png');
+    background-size: cover; 
+    background-position: center; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    min-height: 100vh; 
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    height: 4rem;
+    width: 15rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    background-color: #FFC0CB;
+    font-size: 22px;
+}
+a {
+    color: #333333;
+}
+
+a:hover{
+    color: black;
+}
