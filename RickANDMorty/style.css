@@ -86,7 +86,6 @@ header{
     }
 }
 /*Fin navegador con menu hamburguesa*/
-
 .contenedor__tarjetas {
     display: grid;
     gap: 1.5rem;
@@ -101,11 +100,9 @@ header{
     max-width: 16rem;
     overflow: hidden;
 }
-
 p{
     color: #333333;
 }
-
 /*Inicio estilos de botones*/
 .botones__paginado {
     padding: 3rem;
