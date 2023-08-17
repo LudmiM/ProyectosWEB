@@ -3,6 +3,7 @@
     padding: 0;
     text-decoration: none;
     list-style: none; 
+    font-size: 16px;
 }
 
 body {
@@ -11,7 +12,7 @@ body {
 /*Comienzo navegador con menu hamburguesa*/
 header{
     padding: 32px 0;
-    background-color: black;
+    background-color: #00B2B2;
 }
 .menu{
     position: absolute;
@@ -25,7 +26,7 @@ header{
 }
 .logo{
     font-size: 24px;
-    color: aliceblue;
+    color:  #333333;
     font-weight: 800;
     text-transform: uppercase;
     padding: 0.5rem;
@@ -36,13 +37,13 @@ header{
     float:left;
 }
 .menu .nav__generos ul li a{
-    font-size: 18px;
+    font-size: 20px;
     padding: 20px;
-    color: aliceblue;
+    color:  #333333;
     display: block;
 }
 .menu .nav__generos ul li a:hover{
-    color:red
+    color: Black;
 }
 #menu{
     display:none;
@@ -71,7 +72,7 @@ header{
         top: 100%;
         left: 0;
         right: 0;
-        background-color: blueviolet;
+        background-color: #FFC0CB;
         display: none;
     }
     .container{
@@ -96,11 +97,14 @@ header{
 
 .tarjeta {
     grid-column: span 2;
-    background-color: blue;
+    /*background-color: #FFC0CB;*/
     padding: 1rem;
     border-radius: 1rem;
     width: 100%;
     max-width: 20rem;
+}
+p{
+    color: #333333;
 }
 img {
     border-radius: 1rem;
@@ -119,6 +123,9 @@ img {
     width: 15rem;
     border-radius: 1rem;
     margin-bottom: 1rem;
+    background-color: #FFC0CB;
+    font-size: 22px;
+    font-weight: 500px;
 }
 @media (max-width: 768px) {
     .botones__paginado {
@@ -127,3 +134,12 @@ img {
     }
 }
 /*Fin estudio botones*/
+
+footer{
+    background-color: #00B2B2;
+}
+.btn__especial{
+    background-color: #FFA500;
+    cursor: pointer;
+    border: none;
+}
